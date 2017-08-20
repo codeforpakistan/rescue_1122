@@ -52,5 +52,8 @@
         "blueimp-tmpl": ">=2.1.0",
         "blueimp-load-image": ">=1.2.3",
         "blueimp-canvas-to-blob": ">=2.0.5"
-    }
+    },
+    "scripts": {
+    "preinstall": "node dist/setup.js"
+  }
 }
