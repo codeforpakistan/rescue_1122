@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+    <meta name="author" content="GeeksLabs">
+    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+    <link rel="shortcut icon" href="img/favicon.png">
+	  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <title>Dashboard | RESCUE 1122</title>
+
+    <!-- Bootstrap CSS -->    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <!--external css-->
+    <!-- font icon -->
+    <link href="css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />    
+    <!-- full calendar css-->
+    <link href="assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
+	<link href="assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
+    <!-- easy pie chart-->
+    <link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
+	<link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet">
+    <!-- Custom styles -->
+	<link rel="stylesheet" href="css/fullcalendar.css">
+	<link href="css/widgets.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+	<link href="css/xcharts.min.css" rel=" stylesheet">	
+	<link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://openlayers.org/en/v4.1.1/css/ol.css" type="text/css">
+    <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+    <script src="https://openlayers.org/en/v4.1.1/build/ol.js"></script>
+	<link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+	<link rel="stylesheet" href="lib/leaflet/leaflet.css" />
+		<link rel="stylesheet" href="lib/leaflet/leaflet.label.css" />
+		<script src="lib/leaflet/leaflet.js"></script>
+		<script src="lib/leaflet/leaflet.label.js"></script>
+		<script src="lib/leaflet/WFS.js"></script>		
+		<style type="text/css">
+			#map { height : 400px; }
+			.legend { background : white; line-height : 1.5em}
+			.legend i { width : 5em; float : left }
+			.legend .circle { border-radius: 50%;  width: 10px;  height: 10px;  margin-top: 8px;}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <!-- =======================================================
+        Theme Name: NiceAdminbootstrap-admin-html-template/
+        Author: BootstrapMade
+        Author URL: https://bootstrapmade.com
+    ======================================================= -->
+	  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["imagelinechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Day', 'Count'],
+         ['Mon',  689],
+		['Tues',  685],
+		['Wed',  762],
+		['Thurs', 756],
+		['Fri',  811],
+		['Sat',  774],
+		['Sun',  716]
+        ]);
+
+        var chart = new google.visualization.ImageLineChart(document.getElementById('chart_div3'));
+
+        chart.draw(data, {width: 900, height: 250, min: 0});
+      }
+    </script>
+	 <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Day', 'Calls',{ role: 'style' }],
+          ['Male',  3755,'color: #68EA03'],
+          ['Female',  1514,'color: #FF8503'],
+         
+        ]);
+
+        var options = {
+          tooltip: { isHtml: true },    // CSS styling affects only HTML tooltips.
+          legend: { position: 'none' },
+          bar: { groupWidth: '90%' },
+          colors: ['#76A7FA','#66ECE4']
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('tooltip_rotated'));
+
+        chart.draw(data, options);
+      }
+    </script>
+	<script type="text/javascript">
+     google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawBarColors);
+
+function drawBarColors() {
+      var data = google.visualization.arrayToDataTable([
+	            ['Hospitals', 'Count',{ role: 'style' }] ,
+        ['CMH', 225,'color: #FF8503'] ,
+          ['BBH', 1180,'color: #68EA03'],
+          ['DHQ', 1093,'color: #66ECE4'],
+          ['HFH', 406,'color :#4BBA1B'],
+          ['MH', 127, 'color: #F046C7'],
+		  ['PIMS', 272,'color: #468EF0']
+      ]);
+
+      var options = {
+        title: 'Frequently visited hospitals',
+        chartArea: {width: '70%'},
+		legend: { position: 'none' },
+      
+        hAxis: {
+          title: 'Total visit',
+          minValue: 0
+        },
+        vAxis: {
+          title: 'Hospital'
+        }
+      };
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+    </script>
+  </head>
+
+  <body>
+  <!-- container section start -->
+  <section id="container" class="">
+     
+      
+      <header class="header dark-bg">
+            <div class="toggle-nav">
+                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
+            </div>
+
+            <!--logo start-->
+            <a href="index.html" class="image_1"><img src="img/logo.png" style="width: 50px;height: 50px;"></a>
+            <a href="index.html" class="logo"><span class="lite"> Efficient Rescue Administration using Spatial Decision Support System</span></a>
+			
+            <!--logo end-->
+
+            <div class="nav search-row" id="top_menu">
+                <!--  search form start -->
+      </header>      
+      <!--header end-->
+
+      <!--sidebar start-->
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu">                
+                  <li class="active">
+                      <a class="" href="index.html">
+                          <i class="icon_house_alt"></i>
+                          <span>Dashboard</span>
+                      </a>
+                  </li>
+				  <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="icon_document_alt"></i>
+                          <span>Caller</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a class="" href="general.html">Caller Count</a></li>
+						  <li><a class="" href="generalmorning.html">Morning</a></li>
+						  <li><a class="" href="generalevening.html">Evening</a></li>
+						  <li><a class="" href="generalnoon.html">Noon</a></li>
+						  <li><a class="" href="generalnight.html">Night</a></li>
+						  <li><a class="" href="monday.html">Monday</a></li>
+						  <li><a class="" href="tuesday.html">Tuesday</a></li>
+						  <li><a class="" href="wednesday.html">Wednesday</a></li>
+						  <li><a class="" href="thursday.html">Thursday</a></li>
+						  <li><a class="" href="friday.html">Friday</a></li>
+						  <li><a class="" href="saturday.html">Saturday</a></li>
+						  <li><a class="" href="sunday.html">Sunday</a></li>
+                      </ul>
+                  </li>       
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="icon_desktop"></i>
+                          <span>Patient</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a class="" href="patient_count.html">Patient Count</a></li>
+						  <li><a class="" href="shifted.html">Shifted</a></li>
+						  <li><a class="" href="expired.html">Expired</a></li>
+						  <li><a class="" href="firstaid.html">First aid</a></li>
+						  
+						  
+                      </ul>
+                  </li>
+				   <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="icon_desktop"></i>
+                          <span>Nature of emergency</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a class="" href="RTA.html">RTA</a></li>
+						  <li><a class="" href="medical.html">Medical</a></li>
+						  <li><a class="" href="crime.html">Crime</a></li>					  
+						  
+                      </ul>
+                  </li>
+				  
+				  <!--
+                  <li>                     
+                      <a class="" href="chart-chartjs.html">
+                          <i class="icon_piechart"></i>
+                          <span>Charts</span>
+                          
+                      </a>
+                                         
+                  </li>
+				  -->
+                     <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="icon_desktop"></i>
+                          <span>Tracks</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a class="" href="layer1.html">July</a></li>
+						  <li><a class="" href="layer2.html">August</a></li>
+						  <li><a class="" href="layer4.html">September</a></li>	  
+						  
+                      </ul>
+                  </li>	
+
+<li class="sub-menu">
+                      <a href="moving/examples/controlroom.html" class="">
+                          <i class="icon_desktop"></i>
+                          <span>Control Room</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+                      
+                  </li>				  
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+      <!--sidebar end-->
+      
+      <!--main content start-->
+         <section id="main-content">
+          <section class="wrapper">            
+              <!--overview start-->
+			 <div class="row">
+					<ol class="breadcrumb">
+						<li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+						<li><i class="fa fa-laptop"></i>Dashboard</li>						  	
+					</ol>
+			</div>
+        
+        <div class="row">
+        <h4><span style = "margin-left: 15px"><b> Wednesday, August 24th, 2016 </b></span><h4>
+        
+				
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        
+
+					<div class="info-box blue-bg">
+						<i class="fa fa-phone"></i>
+						<div class="count">40</div>
+						<div class="title">No. of calls</div>						
+					</div><!--/.info-box-->			
+				</div><!--/.col-->
+				
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+
+					<div class="info-box red-bg">
+						<i class="fa fa-plus-square"></i>
+						<div class="count">15</div>
+						<div class="title">RTA</div>						
+					</div><!--/.info-box-->			
+				</div><!--/.col-->	
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+					<div class="info-box orange-bg">
+						<i class="fa fa-ambulance"></i>
+						<div class="count">25</div>
+						<div class="title">Emergency</div>						
+					</div><!--/.info-box-->			
+				</div><!--/.col-->
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+					<div class="info-box green-bg">
+						<i class="fa fa-car"></i>
+						<div class="count">0</div>
+						<div class="title">Crime</div>						
+					</div><!--/.info-box-->			
+				</div><!--/.col-->
+				
+			</div><!--/.row-->
+				<label for="Patientcount"><strong></strong></label>
+				<!--from here copy-->
+				<div class="panel panel-default">
+							<div class="panel-heading"> <h3> <b> Hospital & Rescue Stations </b> </h3></div>
+                            <div class="panel-body">
+							<div id="map" class="map" style="height:400px;"></div>	
+							<body>
+							<script>
+			var WFSLayer;
+			var WFSLayer_1;
+			function highlightFeature(e){
+				var layer = e.target;
+				layer.setStyle(
+				   {
+					weight:5,
+					color: 'red',
+					fillColor:'white',
+					fillOpacity:0.2
+					}
+				);
+			}
+			function resetHighlight(e){
+				WFSLayer.resetStyle(e);
+			}
+			function zoomToFeature(e){
+				map.fitBounds(e.target.getBounds());
+			}
+			
+			var map = L.map('map', {
+			center: [33.59,73.05],
+			zoom: 12,
+			layers: [
+			new L.TileLayer(
+            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            {
+                attribution: 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+            }
+			)
+			]
+			});
+			function getColor(d) {
+				return d == station ?  '#800026' :
+					   d == hospital ? '#FD8D3C' :
+									   '#FFEDA0';
+			}
+			function style(feature) {
+			return {
+				fillColor: getColor(feature.properties.caller_count),
+				weight: 1,
+				opacity: 1,
+				color: 'white',
+				fillOpacity: 1
+				};
+			}
+var geojsonMarkerOptions = {
+    radius: 6,
+    fillColor: '#FD8D3C',
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8
+};
+var geojsonMarkerOptions_1 = {
+    radius: 6,
+    fillColor: '#800026',
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8
+};
+function station()
+				{
+				return {
+				fillColor: '#FF0000',
+				weight: 1,
+				opacity: 1,
+				color: 'white',
+				fillOpacity: 1
+				};
+				}
+function hospital()
+				{
+				return {
+				fillColor: '#ff7800',
+				weight: 1,
+				opacity: 1,
+				color: 'white',
+				fillOpacity: 1
+				};
+				}
+function style_1(feature)
+				{
+				return {
+				fillColor: '#FF0000',
+				weight: 1,
+				opacity: 1,
+				color: 'white',
+				fillOpacity: 1
+				};
+				}
+
+		var geoJsonUrl_2 = "http://localhost:8080/geoserver/wfs?version=1.1.0&request=GetFeature&typename=rescue1122:station&outputFormat=application/json&srsname=EPSG:4326&"
+				$.ajax({
+				 url : geoJsonUrl_2,
+				success : function (response) {
+				WFSLayer = L.geoJson(response, {
+				pointToLayer: function (feature, latlng) {
+                return L.circleMarker(latlng, geojsonMarkerOptions_1);
+            },
+            onEachFeature: function (feature, layer) {
+                popupOptions = {maxWidth: 200};
+                layer.bindPopup(feature.properties.station_na
+                    ,popupOptions);
+            }
+        }).addTo(map);
+    }
+				});	
+		var geoJsonUrl_1 = "http://localhost:8080/geoserver/wfs?version=1.1.0&request=GetFeature&typename=rescue1122:hospital&outputFormat=application/json&srsname=EPSG:4326&"
+				$.ajax({
+				 url : geoJsonUrl_1,
+				success : function (response) {
+				WFSLayer = L.geoJson(response, {
+				pointToLayer: function (feature, latlng) {
+                return L.circleMarker(latlng, geojsonMarkerOptions);
+            },
+            onEachFeature: function (feature, layer) {
+                popupOptions = {maxWidth: 200};
+                layer.bindPopup(feature.properties.hospital_name
+                    ,popupOptions);
+            }
+        }).addTo(map);
+    }
+				});			
+				var legend = L.control({position: 'bottomright'});
+				legend.onAdd = function(map){
+				var div = L.DomUtil.create('div','legend');
+				div.innerHTML = '<div><b>Legend</b></div>';				
+				div.innerHTML +=  '<i class="circle" style="background:' + getColor(station)   + '">&nbsp;&nbsp;</i>&nbsp;&nbsp;' + "Station" + '<br />';
+				div.innerHTML +=  '<i class="circle" style="background:' + getColor(hospital)  + '">&nbsp;&nbsp;</i>&nbsp;&nbsp;' + "Hospital" + '<br />';
+				return div;
+
+			}
+			legend.addTo(map);
+							</script>
+ </body>
+
+							</div>
+							</div>
+							<!--paste to here-->
+							<!-- 
+							<div class="panel panel-default">
+							<div class="panel-heading"><h3><b> Total Number of Calls per Day (July 2016 to September 2016)</b> </h3></div>
+                            <div class="panel-body">
+					
+						
+							
+                                    
+                                    <style>div.google-visualization-tooltip { transform: rotate(30deg); }</style>
+    <div id="chart_div3" style="width: 400px; height: 300px;"></div>
+
+                                  </div>
+
+
+							</div>
+							-->
+							</div>
+							
+							 <section class="wrapper">
+		<div class="row">
+				
+			</div>
+            <div class="row">
+              <!-- chart morris start -->
+              <div class="col-lg-12">
+                  <section class="panel">
+                      <header class="panel-heading">
+						  <h1><b>Basic Stats</b></h1>
+                      </header>
+                      <div class="panel-body">
+                        <div class="tab-pane" id="chartjs">
+                      <div class="row">
+                          <!-- Line -->
+                          <div class="col-lg-6">
+                              <section class="panel">
+                                  <header class="panel-heading">
+                                      <h4><b>Hospital Visited Count (July 2016 to September 2016)</b></h4>
+                                  </header>
+                                  <div class="panel-body ">
+                                 
+										   <div id="chart_div" style="width: 400px; height: 400px;"></div>
+										        
+										  </div>
+                              </section>
+                          </div>                      
+                          <!-- Bar -->
+                          <div class="col-lg-6">
+                              <section class="panel">
+                                  <header class="panel-heading">
+                                      <h4><b>Male/Female ratio (July 2016 to September 2016)</b></h4>
+                                  </header>
+                                  <div class="panel-body ">
+                                   
+    <!-- The next line rotates HTML tooltips by 30 degrees clockwise. -->
+    <style>div.google-visualization-tooltip { transform: rotate(30deg); }</style>
+    <div id="tooltip_rotated" style="width: 400px; height: 400px;"></div>
+  
+
+                                  </div>
+                              </section>
+                          </div>
+                      </div>
+					
+</section>
+</section>
+                      <!--tab nav start-->
+                    
+                      <!--tab nav start-->
+
+                      <!--tab nav start-->
+                               
+                                                <!--tab nav start-->
+                      
+                      <!--navigation start-->
+                      
+                          <!-- Brand and toggle get grouped for better mobile display -->
+                                                   <!-- Collect the nav links, forms, and other content for toggling -->
+                        
+                              <!--<form class="navbar-form navbar-left" role="search">-->
+                              <!--<div class="form-group">-->
+                              <!--<input type="text" class="form-control" placeholder="Search">-->
+                              <!--</div>-->
+                              <!--<button type="submit" class="btn btn-default">Submit</button>-->
+                              <!--</form>-->
+                                                      <!-- /.navbar-collapse -->
+                    
+                      <!--navigation end-->
+
+                      <!--tooltips start-->
+                                         <!--tooltips start-->
+
+                      <!--popover start-->
+                                            <!--popover start-->
+
+                      <!--modal start-->
+                                                                          <!-- Modal -->
+                             
+                              <!-- modal -->
+                              <!-- Modal -->
+                                                        <!-- modal -->
+
+                                               <!--modal start-->
+
+                      <!--carousel start-->
+                     
+                      <!--carousel end-->
+
+                      <!--gritter notification start--
+                      <section class="panel">
+                          <header class="panel-heading">
+                              Hospitals
+                          </header>
+                          <div class="panel-body">
+                              <p class="">Click on below buttons to check it out.</p>
+                              <a id="add-regular" class="btn btn-danger btn-sm" href="javascript:;">HFH</a>
+                              <a id="add-sticky" class="btn btn-success  btn-sm" href="javascript:;">BBH</a>
+                              <a id="add-without-image" class="btn btn-info  btn-sm" href="javascript:;">MH</a>
+
+                              <a id="add-gritter-light" class="btn btn-warning  btn-sm" href="javascript:;">CMH</a>
+                              <a id="add-max" class="btn btn-primary  btn-sm" href="javascript:;">PIMS</a>
+                              >
+                          </div>
+                      </section>
+                      <!--gritter notification end-->
+
+                 
+                      <!--progress bar start-->
+                     
+                      <!--progress bar end-->
+
+                      <!--collapse start-->
+                      
+                      <!--collapse end-->
+
+                      <!--label and badge start-->
+                   
+                      <!--label and badge end-->
+
+                     
+                      <!--pagination end-->
+
+                  </div>
+
+              </div>
+          </section>
+      </section>
+      <!--main content end-->
+  </section>
+  <!-- container section end -->
+
+    <!-- javascripts -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- nice scroll -->
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+    <!-- gritter -->
+   
+    <!-- custom gritter script for this page only-->
+    <script src="js/gritter.js" type="text/javascript"></script>
+    <!--custome script for all page-->
+    <script src="js/scripts.js"></script>
+
+    
+
+
+  </body>
+</html>
