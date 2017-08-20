@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "581095690463",
+    "firebase_url": "https://rescue1122-1a319.firebaseio.com",
+    "project_id": "rescue1122-1a319",
+    "storage_bucket": "rescue1122-1a319.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:581095690463:android:4af44ef0c865dab4",
+        "android_client_info": {
+          "package_name": "com.example.gisplus.rescue1122"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "581095690463-b07d3oj40muvh3n5g2pjikpg2e21bpma.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXvdW05W6O47LBMWin6IidhAXV0t8f-GI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
